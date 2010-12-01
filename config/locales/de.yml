@@ -1,0 +1,11 @@
+de:
+  trackings:
+    index: Paketverfolgungen
+    new: Neue Paketverfolgung
+    datetime: Zeitpunkt
+    city: Stadt
+    event_type: Status
+    delivered_to: Ausgeliefert an
+    partner_nr: TrackingID
+    partner_name: Versandunternehmen
+    reload: Neu laden

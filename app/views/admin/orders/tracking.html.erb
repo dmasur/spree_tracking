@@ -1,0 +1,12 @@
+<div class='toolbar order-links'>
+  <%= button_link_to t("edit"), edit_admin_order_checkout_url(@order.number), :icon => 'edit' %>
+</div>
+
+<%= render :partial => 'admin/shared/order_tabs', :locals => {:current => "Tracking"} %>
+
+<h1><%= "#{t("actions.listing")} #{t("trackings.index")}" %></h1>
+
+<%= image_tag "spinner.gif", :plugin=>"spree", :style => "display:none", :id => 'busy_indicator' %>
+<div id="new-tracking"></div>
+
+<%= render "/shared/tracking_table", :locals => {:my_order => @order}%>
