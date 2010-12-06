@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_tracking'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.summary     = 'Adds Trackingsupport for DHL and DPD'
   #s.description = 'Add (optional) gem description here'
   s.required_ruby_version = '>= 1.8.7'
