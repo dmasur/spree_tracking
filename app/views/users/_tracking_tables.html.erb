@@ -1,21 +1,23 @@
-<%= @order.shipment.tracking %>
-<% if current_user.roles.include? Role.find_by_name "admin" %>
-  |
-  <%= link_to t("trackings.reload"), reload_tracking_admin_order_path(@order)%>
-<% end %>
-<table class="index">
-  <tr>
-    <th><%= t("trackings.datetime") %></th>
-    <th><%= t("trackings.city") %></th>
-    <th><%= t("trackings.event_type") %></th>
-    <th><%= t("trackings.delivered_to") %></th>
-  </tr>
-  <% @order.shipment.tracking_events.each do |tracking_event| %>
-    <tr> 
-      <td><%=l tracking_event.event_date %></td>
-      <td><%= tracking_event.city %></td>
-      <td><%= tracking_event.event_type %></td>
-      <td><%= tracking_event.delivered_to %></td>
-    </tr>
+<% if @order %>
+  <%= @order.shipment.tracking %>
+  <% if current_user.roles.include? Role.find_by_name "admin" %>
+    |
+    <%= link_to t("trackings.reload"), reload_tracking_admin_order_path(@order)%>
   <% end %>
-</table>
+  <table class="index">
+    <tr>
+      <th><%= t("trackings.datetime") %></th>
+      <th><%= t("trackings.city") %></th>
+      <th><%= t("trackings.event_type") %></th>
+      <th><%= t("trackings.delivered_to") %></th>
+    </tr>
+    <% @order.shipment.tracking_events.each do |tracking_event| %>
+      <tr> 
+        <td><%=l tracking_event.event_date %></td>
+        <td><%= tracking_event.city %></td>
+        <td><%= tracking_event.event_type %></td>
+        <td><%= tracking_event.delivered_to %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
