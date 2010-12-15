@@ -1,5 +1,5 @@
 <% if @order.shipment && !@order.shipment.tracking.blank? %>
-  <li <%= ' class="active"' if current == "Tracking" %>>
+  <li>
     <%= link_to t("trackings.index"), tracking_admin_order_path(@order) %>
   </li>
 <% end %>

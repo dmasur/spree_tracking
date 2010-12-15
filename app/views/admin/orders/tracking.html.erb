@@ -1,5 +1,5 @@
 <div class='toolbar order-links'>
-  <%= button_link_to t("edit"), edit_admin_order_checkout_url(@order.number), :icon => 'edit' %>
+  <%= button_link_to t("edit"), edit_admin_order_url(@order.number), :icon => 'edit' %>
 </div>
 
 <%= render :partial => 'admin/shared/order_tabs', :locals => {:current => "Tracking"} %>
